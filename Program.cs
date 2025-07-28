@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using LinqProject.Data;
 using LinqProject.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LinqProject
 {
@@ -25,7 +27,21 @@ namespace LinqProject
             //}
 
             //3 - Get all products that belong to a category named "Mountain Bikes".
-            var products = context.Products.Where(e=>e.ca)
+            //var products = context.Products.Where(e => e.Category.CategoryName == "Mountain Bikes");
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine($"productId: {item.ProductId} , productName : {item.ProductName}");
+            //}
+
+            //4 - Count the total number of orders per store.
+
+            //5 - List all orders that have not been shipped yet(shipped_date is null).
+            var orders = context.Orders.Where(o => o.ShippedDate == null);
+            foreach (var item in orders) 
+            { 
+                Console.WriteLine($"OrderId :{item.OrderId} , OrderStatus :{item.OrderStatus}");
+            }
+
 
 
         }
