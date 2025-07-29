@@ -71,7 +71,15 @@ namespace LinqProject
             //    Console.WriteLine($"Customer: {item.FullName}, Orders: {item.OrderCount}");
             //}
 
-            //7 - List all products that have never been ordered(not found in order_items).
+            //7 - List all products that have never been ordered(not found in order_items).????????????????????????????????????
+           // var productsNeverOrdered = context.Products
+           //.Where(p => !p.OrderItems.Any())
+           //.ToList();
+
+            // foreach (var item in productsNeverOrdered)
+            // {
+            //     Console.WriteLine($"Product: {item.ProductName} (ID: {item.ProductId})");
+            // }
 
             //8 - Display products that have a quantity of less than 5 in any store stock.
             //var lowStockProducts = context.Stocks
